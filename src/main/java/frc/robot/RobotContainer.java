@@ -207,7 +207,7 @@ public class RobotContainer {
             new IntakeCommand(intakeSubsystem, indexerSubsystem, ledSubsystem, primaryController, secondaryController, IntakeCommand.Targets.SPEAKER, false)
     );
 
-    new JoystickButton(primaryController, XboxController.Button.kB.value).whileTrue(
+    new POVButton(secondaryController, 90).whileTrue(
             new RotateToNoteAndDriveCommand(swerveSubsystem, secondaryController,
                     () -> -primaryController.getLeftY() * DrivetrainConstants.drivingSpeedScalar,
                     () -> -primaryController.getLeftX() * DrivetrainConstants.drivingSpeedScalar,
